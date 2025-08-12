@@ -88,8 +88,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         })(window, document, "clarity", "script", "s7ifpngdg7");
     </script>
 </head>
-<body>
+<body class="login-page">
     <div class="form-container">
+        <img src="images/fav.png" alt="Logo" class="logo">
         <h2>Login</h2>
 
         <?php if (!empty($error)): ?>
