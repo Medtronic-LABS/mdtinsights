@@ -9,6 +9,12 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+$org = $_SESSION['organization'] ?? '';
+if (!in_array($org, ['Medtronic Labs', 'Kenya Diabetes Management & Information Centre'])) {
+    header('Location: reports.php');
+    exit;
+}
+
 function logPageAccess($pageName, $conn) {
     if (isset($_SESSION['user_id'])) {
         $userId = $_SESSION['user_id'];
@@ -25,7 +31,7 @@ function logPageAccess($pageName, $conn) {
     }
 }
 
-logPageAccess('HRIO Dashboard', $conn);
+logPageAccess('County Led DQA', $conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">

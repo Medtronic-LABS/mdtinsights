@@ -9,6 +9,12 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+$org = $_SESSION['organization'] ?? '';
+if (!in_array($org, ['Medtronic Labs', 'Ministry of Health'])) {
+    header('Location: reports.php');
+    exit;
+}
+
 function logPageAccess($pageName, $conn) {
     if (isset($_SESSION['user_id'])) {
         $userId = $_SESSION['user_id'];

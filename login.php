@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_email'] = $user['email'];
+            $_SESSION['organization'] = $user['organization'];
 
             if ($remember) {
                 setcookie("remembered_user", $rawInput, time() + (86400 * 60), "/");
@@ -53,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $log_stmt->bind_param("is", $user['id'], $login_time);
             $log_stmt->execute();
 
-            header("Location: reports.html");
+            header("Location: reports.php");
             exit();
         } else {
             $error = "Invalid email or phone number or password. <a href='forgot-password.php'>Forgot password?</a>";
@@ -88,8 +89,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         })(window, document, "clarity", "script", "s7ifpngdg7");
     </script>
 </head>
-<body>
+<body class="login-page">
     <div class="form-container">
+        <img src="images/fav.png" alt="Logo" class="logo">
         <h2>Login</h2>
 
         <?php if (!empty($error)): ?>
