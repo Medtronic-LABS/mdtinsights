@@ -13,7 +13,8 @@ if ($org === 'Medtronic Labs') {
         ['HRIO.php', 'HRIO Report'],
         ['dqa.php', 'County Led DQA'],
         ['Novo.php', 'NOVO'],
-        ['org.php', 'MDTLabs Impact Metrics']
+        ['org.php', 'MDTLabs Impact Metrics'],
+        ['sl.php', 'Sierra Leone Reports']
     ];
 } elseif ($org === 'Ministry of Health') {
     $links = [
@@ -22,6 +23,10 @@ if ($org === 'Medtronic Labs') {
 } elseif ($org === 'Kenya Diabetes Management & Information Centre') {
     $links = [
         ['dqa.php', 'County Led DQA']
+    ];
+} elseif ($org === 'Sierra Leone') {
+    $links = [
+        ['sl.php', 'Sierra Leone Reports']
     ];
 }
 ?>
@@ -81,6 +86,19 @@ if ($org === 'Medtronic Labs') {
         .box a:hover {
             background-color: #0055cc;
         }
+        .logout-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #00338D;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .logout-btn:hover {
+      background-color: #0055cc;
+    }
     </style>
 </head>
 <body>
@@ -97,6 +115,14 @@ if ($org === 'Medtronic Labs') {
             <p>No reports available for your organization.</p>
         <?php endif; ?>
     </div>
+    <a href="logout.php" class="logout-btn">Logout</a>
+    <script>
+        // Optional: Add a click event to the logout button
+        document.querySelector('.logout-btn').addEventListener('click', function() {
+            window.location.href = 'logout.php';
+        });
+    </script>
+</div>
 </body>
 </html>
 
