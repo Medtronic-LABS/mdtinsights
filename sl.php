@@ -9,12 +9,15 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// Organization access control
 $org = $_SESSION['organization'] ?? '';
 if (stripos($org, 'Sierra Leone') === false) {
+    // Redirect unauthorized users to the main reports page
     header('Location: reports.php');
     exit;
 }
 
+// Log page access
 function logPageAccess($pageName, $conn) {
     if (isset($_SESSION['user_id'])) {
         $userId = $_SESSION['user_id'];
@@ -40,6 +43,7 @@ logPageAccess('Sierra Leone Dashboard', $conn);
   <title>Sierra Leone Reports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/comemr.png">
+
   <!-- Microsoft Clarity Tracking Code -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -48,6 +52,7 @@ logPageAccess('Sierra Leone Dashboard', $conn);
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "s7ifpngdg7");
   </script>
+
   <style>
     body, html {
       margin: 0;
