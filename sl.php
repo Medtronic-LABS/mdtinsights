@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Organization access control
 $org = $_SESSION['organization'] ?? '';
-if (stripos($org, 'Sierra Leone') === false) {
+if (stripos($org, 'Sierra Leone') === false && stripos($org, 'Medtronic Labs') === false) {
     // Redirect unauthorized users to the main reports page
     header('Location: reports.php');
     exit;
