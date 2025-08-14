@@ -100,6 +100,7 @@ if (!empty($redirect)) {
         <option value="Medtronic Labs">Medtronic Labs</option>
         <option value="Ministry of Health">MOH</option>
         <option value="Kenya Diabetes Management & Information Centre">DMI</option>
+        <option value="Sierra Leone">Sierra Leone</option>
         <option value="Other">Other</option>
     </select>
 

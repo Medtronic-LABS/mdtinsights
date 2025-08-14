@@ -37,7 +37,7 @@ logPageAccess('County Led DQA', $conn);
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Novo Reports</title>
+  <title>Sierra Leone Reports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/comemr.png">
 
@@ -67,3 +67,4 @@ logPageAccess('County Led DQA', $conn);
   <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMmUwNzllZTItY2U5OC00MWU5LWJiOGItNjMwMTgyY2Q2NzQzIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
 </body>
 </html>
+//thids is the end of the file

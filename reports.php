@@ -13,7 +13,8 @@ if ($org === 'Medtronic Labs') {
         ['HRIO.php', 'HRIO Report'],
         ['dqa.php', 'County Led DQA'],
         ['Novo.php', 'NOVO'],
-        ['org.php', 'MDTLabs Impact Metrics']
+        ['org.php', 'MDTLabs Impact Metrics'],
+        ['sl.php', 'Sierra Leone Reports']
     ];
 } elseif ($org === 'Ministry of Health') {
     $links = [
