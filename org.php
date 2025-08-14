@@ -61,9 +61,21 @@ logPageAccess('MDTLabs Impact Metrics', $conn);
       height: 100%;
       border: none;
     }
+    .logout-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color:rgb(54, 158, 244);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+<a href="logout.php" class="logout-btn">Logout</a>
   <iframe src="https://app.powerbi.com/view?r=eyJrIjoiOGMwYTBmYzUtNjAyZi00ZGU1LWE0OWItNGE5M2MxMjhiM2VlIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
 </body>
 </html>
