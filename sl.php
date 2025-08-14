@@ -1,16 +1,16 @@
 <?php
 session_start();
-require_once 'sl.php';
+require_once 'db.php';
 date_default_timezone_set('Africa/Nairobi');
 
-// Optional access control
+// Ensure user is logged in
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
 
 $org = $_SESSION['organization'] ?? '';
-if (!in_array($org, ['Medtronic Labs', 'Kenya Diabetes Management & Information Centre'])) {
+if (stripos($org, 'Sierra Leone') === false) {
     header('Location: reports.php');
     exit;
 }
@@ -26,12 +26,12 @@ function logPageAccess($pageName, $conn) {
             $stmt->execute();
             $stmt->close();
         } else {
-            error_log("SQL prepare failed: " . $conn->error);
+            error_log('SQL prepare failed: ' . $conn->error);
         }
     }
 }
 
-logPageAccess('County Led DQA', $conn);
+logPageAccess('Sierra Leone Dashboard', $conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +40,6 @@ logPageAccess('County Led DQA', $conn);
   <title>Sierra Leone Reports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/comemr.png">
-
   <!-- Microsoft Clarity Tracking Code -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -49,22 +48,27 @@ logPageAccess('County Led DQA', $conn);
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "s7ifpngdg7");
   </script>
-
   <style>
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
     }
+    header {
+      text-align: center;
+      padding: 10px;
+    }
     iframe {
       width: 100%;
-      height: 100%;
+      height: calc(100% - 80px);
       border: none;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="/images/comemr.png" alt="COMEMR Logo" style="max-height:60px;">
+  </header>
   <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMmUwNzllZTItY2U5OC00MWU5LWJiOGItNjMwMTgyY2Q2NzQzIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
 </body>
 </html>
-//thids is the end of the file

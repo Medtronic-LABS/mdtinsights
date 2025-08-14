@@ -24,6 +24,10 @@ if ($org === 'Medtronic Labs') {
     $links = [
         ['dqa.php', 'County Led DQA']
     ];
+} elseif (stripos($org, 'Sierra Leone') !== false) {
+    $links = [
+        ['sl.php', 'Sierra Leone Reports', '/images/comemr.png']
+    ];
 }
 ?>
 <!DOCTYPE html>
