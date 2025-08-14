@@ -61,9 +61,21 @@ logPageAccess('County Led DQA', $conn);
       height: 100%;
       border: none;
     }
+    .logout-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+  <button class="logout-btn" onclick="window.location.href='logout.php'">Logout</button>
   <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNTM4ZWI5YWYtYWYzMS00NTM5LWEwM2YtNWQzZWRkYzdlN2QwIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
 </body>
 </html>

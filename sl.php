@@ -68,12 +68,26 @@ logPageAccess('Sierra Leone Dashboard', $conn);
       height: calc(100% - 80px);
       border: none;
     }
+    .logout-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #00338D;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .logout-btn:hover {
+      background-color: #0055cc;
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="/images/comemr.png" alt="COMEMR Logo" style="max-height:60px;">
   </header>
+    <a href="logout.php" class="logout-btn">Logout</a>
   <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMmUwNzllZTItY2U5OC00MWU5LWJiOGItNjMwMTgyY2Q2NzQzIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
 </body>
 </html>
