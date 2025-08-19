@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $org = $_SESSION['organization'] ?? '';
-if (!in_array($org, ['Medtronic Labs', 'Kenya Diabetes Management & Information Centre'])) {
+if (!in_array($org, ['Medtronic Labs', 'Ministry of Health'])) {
     header('Location: reports.php');
     exit;
 }
@@ -31,13 +31,13 @@ function logPageAccess($pageName, $conn) {
     }
 }
 
-logPageAccess('County Led DQA', $conn);
+logPageAccess('HRIO Dashboard', $conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Novo Reports</title>
+  <title>HRIO Strategy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/fav.png">
 
@@ -62,20 +62,22 @@ logPageAccess('County Led DQA', $conn);
       border: none;
     }
     .logout-btn {
-      position: absolute;
+      position: fixed;
       top: 10px;
       right: 10px;
-      padding: 10px 20px;
-      background-color: #f44336;
+      background-color: #00338D;
       color: white;
-      border: none;
+      padding: 10px 15px;
+      text-decoration: none;
       border-radius: 5px;
-      cursor: pointer;
+    }
+    .logout-btn:hover {
+      background-color: #0055cc;
     }
   </style>
 </head>
 <body>
-  <button class="logout-btn" onclick="window.location.href='logout.php'">Logout</button>
-  <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNTM4ZWI5YWYtYWYzMS00NTM5LWEwM2YtNWQzZWRkYzdlN2QwIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
+<a href="logout.php" class="logout-btn">Logout</a>
+  <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNzhlODJiNTItMjc2NS00ZTJkLTk1NTUtNmU3ZTdlODE5OTVhIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
 </body>
 </html>

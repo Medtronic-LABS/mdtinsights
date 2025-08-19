@@ -13,41 +13,6 @@ body {
 }
 
 /* ===============================
-   Login Page Theme
-================================== */
-body.login-page {
-  background: linear-gradient(135deg, #665BD1, #A9E6C7);
-}
-
-body.login-page .form-container {
-  background: rgba(255, 255, 255, 0.95);
-  border-top: 4px solid #A9E6C7;
-}
-
-body.login-page h2 {
-  color: #665BD1;
-  text-align: center;
-}
-
-body.login-page button {
-  background: #665BD1;
-}
-
-body.login-page button:hover {
-  background: #5A40AB;
-}
-
-body.login-page a {
-  color: #665BD1;
-}
-
-body.login-page .logo {
-  display: block;
-  margin: 0 auto 10px;
-  width: 80px;
-}
-
-/* ===============================
    Centered Form Container
 ================================== */
 .form-container {
@@ -198,17 +163,4 @@ iframe {
   iframe {
     height: 1000vh;
   }
-}
-.logout-btn {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background-color: #00338D;
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-.logout-btn:hover {
-  background-color: #0055cc;
 }

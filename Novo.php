@@ -9,6 +9,12 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+$org = $_SESSION['organization'] ?? '';
+if ($org !== 'Medtronic Labs') {
+    header('Location: reports.php');
+    exit;
+}
+
 function logPageAccess($pageName, $conn) {
     if (isset($_SESSION['user_id'])) {
         $userId = $_SESSION['user_id'];
@@ -25,7 +31,7 @@ function logPageAccess($pageName, $conn) {
     }
 }
 
-logPageAccess('HRIO Dashboard', $conn);
+logPageAccess('NOVO Dashboard', $conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,9 +61,23 @@ logPageAccess('HRIO Dashboard', $conn);
       height: 100%;
       border: none;
     }
+    .logout-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #00338D;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .logout-btn:hover {
+      background-color: #0055cc;
+    }
   </style>
 </head>
 <body>
+<a href="logout.php" class="logout-btn">Logout</a>
   <iframe src="https://app.powerbi.com/view?r=eyJrIjoiN2M5Mjk0N2ItYTRhNi00MTQxLWExM2UtMjVkY2Y3OThiNzNjIiwidCI6IjcyOWIwNWQ5LTI0NDQtNDI5YS1iM2M4LTdjNWJiZWQ2MjVkOCJ9" allowFullScreen="true"></iframe>
 </body>
 </html>

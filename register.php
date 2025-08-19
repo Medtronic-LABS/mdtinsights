@@ -100,6 +100,7 @@ if (!empty($redirect)) {
         <option value="Medtronic Labs">Medtronic Labs</option>
         <option value="Ministry of Health">MOH</option>
         <option value="Kenya Diabetes Management & Information Centre">DMI</option>
+        <option value="Sierra Leone">Sierra Leone</option>
         <option value="Other">Other</option>
     </select>
 
@@ -182,13 +183,11 @@ if (!empty($redirect)) {
 
     <label for="phone">Phone Number</label>
         <input 
-            type="tel" 
-            id="phone" 
-            name="phone" 
-            placeholder="0712345678" 
-            pattern="[0-9]{10}" 
-            maxlength="10" 
-            required
+            type="tel"
+            id="phone"
+            placeholder="Mobile Number"
+            name="phone"
+            maxlength="15"
         >
 
     <label for="password">Password</label>
