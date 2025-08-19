@@ -36,17 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
 
-<<<<<<< HEAD
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['organization'] = $user['organization'];
-=======
-        if ($user && password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_email'] = $user['email'];
-            $_SESSION['organization'] = $user['organization'];
->>>>>>> 12bb2faea17ffaea067650226afc6a085b73a852
 
             if ($remember) {
                 setcookie("remembered_user", $rawInput, time() + (86400 * 60), "/");
@@ -61,11 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $log_stmt->bind_param("is", $user['id'], $login_time);
             $log_stmt->execute();
 
-<<<<<<< HEAD
             header("Location: reports.php");
-=======
-            header("Location: reports.php");
->>>>>>> 12bb2faea17ffaea067650226afc6a085b73a852
             exit();
         } else {
             $error = "Invalid email or phone number or password. <a href='forgot-password.php'>Forgot password?</a>";
@@ -100,17 +89,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         })(window, document, "clarity", "script", "s7ifpngdg7");
     </script>
 </head>
-<<<<<<< HEAD
 <body class="login-page">
     <div class="form-container">
         <img src="images/fav.png" alt="Logo" class="logo">
         <h2>Login</h2>
-=======
-<body class="login-page">
-    <div class="form-container">
-        <img src="images/fav.png" alt="Logo" class="logo">
-        <h2>Login</h2>
->>>>>>> 12bb2faea17ffaea067650226afc6a085b73a852
 
         <?php if (!empty($error)): ?>
             <p class="error"><?php echo $error; ?></p>
