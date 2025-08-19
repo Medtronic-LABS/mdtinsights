@@ -10,7 +10,7 @@ $links = [];
 
 if ($org === 'Medtronic Labs') {
     $links = [
-        ['WDF.php', 'WDF'],
+        ['HRIO.php', 'HRIO Report'],
         ['dqa.php', 'County Led DQA'],
         ['Novo.php', 'NOVO'],
         ['org.php', 'MDTLabs Impact Metrics'],
@@ -18,7 +18,7 @@ if ($org === 'Medtronic Labs') {
     ];
 } elseif ($org === 'Ministry of Health') {
     $links = [
-        ['WDF.php', 'WDF']
+        ['HRIO.php', 'HRIO Report']
     ];
 } elseif ($org === 'Kenya Diabetes Management & Information Centre') {
     $links = [
